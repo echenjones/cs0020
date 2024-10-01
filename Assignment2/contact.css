@@ -77,9 +77,6 @@ textarea:focus {
     outline: none;
     border-color: #268673;
 }
-a {
-    text-decoration: none;
-}
 ul#nav {
     list-style-type: none;
     font-size: 22px;
