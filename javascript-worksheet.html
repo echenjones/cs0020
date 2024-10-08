@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>JavaScript Worksheet</title>
+    </head>
+
+    <body>
+        <h1>JavaScript Worksheet</h1>
+        <script>
+            function problem1() {
+                let x = 40;
+                for(i = 40; i > 10; i-=2) {
+                    x = i;
+                    document.write(x + ", ");
+                }
+                x -= 2;
+                document.write(x);
+            }
+
+            function problem2() {
+                x = 0;
+                while(x <= 20) {
+                    ans = prompt("Enter a number");
+                    x += parseInt(ans);
+                }
+                alert("You exceeded 20!");
+            }
+
+            function problem3() {
+                i = 0;
+                arr = [];
+                while(i <= 20) {
+                    ans = prompt("Enter a number");
+                    arr.push(parseInt(ans));
+                    i += parseInt(ans);
+                }
+                alert("You exceeded 20!");
+                document.write("<br/>[" + arr + "]");
+            }
+
+            function problem4() {
+                songs = [];
+                songs["Here Comes the Sun"] = "The Beatles";
+                songs["Something"] = "The Beatles";
+                songs["Yesterday"] = "The Beatles";
+                songs["When the Levee Breaks"] = "Led Zeppelin";
+                songs["Another One Bites the Dust"] = "Queen";
+                songs["Bohemian Rhapsody"] = "Queen";
+                songs["Creep"] = "Radiohead";
+                songs["(I Can't Get No) Satisfaction"] = "The Rolling Stones";
+
+                for(song in songs) {
+                    document.write("<br/>" + song + ", by " + songs[song]);
+                }
+            }
+
+            function problem5() {
+                ans = prompt("Enter the name of a band");
+                for(song in songs) {
+                    if(songs[song] == ans) {
+                        document.write("<br/>" + song);
+                    }
+                }
+            }
+            
+            function callAll() {
+                problem1();
+                document.write("<br/>");
+                problem2();
+                problem3();
+                document.write("<br/>");
+                problem4();
+                document.write("<br/>");
+                problem5();
+            }
+
+            callAll();
+        </script>
+    </body>
+</html>
