@@ -1,0 +1,236 @@
+<html>
+    <head>
+        <title>Joe's Hotdog Stand</title>
+        <link rel="icon" type="image/x-icon" href="icon.png">
+        <style type="text/css">
+            .header {
+                color: #FFFFFF;
+                background-color: #E66E29;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+            .page {
+                background-color: #F2DE93;
+                align-content: center;
+                padding-bottom: 10%;
+            }
+            .content {
+                background-color: rgba(255, 255, 255, 0.5);
+                font-size: 20px;
+                width: 50%;
+                padding: 100px;
+                padding-top: 150px;
+                padding-bottom: 10%;
+            }
+            .text {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            .left {
+                margin-left: 0px;
+                text-align: left;
+            }
+            .right {
+                margin-right: 0px;
+                text-align: right;
+            }
+            h1 {
+                color: #FFFFFF;
+                font-size: 40px;
+                text-align: center;
+            }
+            hr {
+                border-style: solid;
+                color: #E66E29;
+                background-color: #E66E29;
+                border-color: #E66E29;
+            }
+            button {
+                display: flex;
+                justify-content: center;
+                border-style: solid;
+                border-radius: 5px;
+                border-color: #E66E29;
+                background-color: #E66E29;
+                font-size: 25px;
+                padding: 3px 10px;
+                margin-top: 30px;
+            }
+            button:hover {
+                background-color: #FFFFFF;
+            }
+            a {
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+            a:hover {
+                color: #E66E29;
+            }
+            * {
+                font-family: "Avenir", Arial, sans-serif;
+                margin: 0 auto;
+            }
+            @media (max-width: 600px) {
+                .content {
+                    font-size: 15px;
+                }
+                h1 {
+                    font-size: 30px;
+                }
+                button {
+                    font-size: 20px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>JOE'S HOTDOG STAND</h1>
+        </div>
+        <div class="page">
+            <div class="content">
+                <div class="text">
+                    <div class="left">
+                        <script>
+                            prices = [];
+                            prices["hotdog"] = 4.8;
+                            prices["fries"] = 3.95;
+                            prices["drink"] = 1.99;
+                            
+                            function getNumbers() {
+                                order = [];
+                                order["hotdogs"] = 0;
+                                order["fries"] = 0;
+                                order["sodas"] = 0;
+                                for (i = 0; i < 3; i++) {
+                                    let ans = prompt("How many orders of " + Object.keys(order)[i] + " do you want?");
+                                    order[Object.keys(order)[i]] = parseInt(ans);
+                                }
+                            }
+                
+                            function showMoney(num) {
+                                let numFloat = parseFloat(num);
+                                numFloat = Math.round(numFloat * 100) / 100;
+                                let numString = numFloat.toString();
+                                let x = numString.split(".")[1];
+                                if (x == null) {
+                                    numString += ".00";
+                                }
+                                else if (x.length == 1) {
+                                    numString += "0";
+                                }
+                                return numString;
+                            }
+                
+                            function calculateSubtotal(discount) {
+                                totals = [];
+                                totals["hotdogs"] = 0;
+                                totals["fries"] = 0;
+                                totals["sodas"] = 0;
+                                let subtotal = 0;
+                                for (i = 0; i < 3; i++) {
+                                    totals[Object.keys(order)[i]] = order[Object.keys(order)[i]] * prices[Object.keys(prices)[i]]
+                                    subtotal += totals[Object.keys(order)[i]];
+                                }
+                                subtotal -= discount;
+                                return subtotal;
+                            }
+                
+                            function calculateDiscount(subtotal) {
+                                let discount = 0;
+                                if (subtotal >= 25) {
+                                    discount = subtotal * 0.1;
+                                }
+                                return discount;
+                            }
+                
+                            function calculateTax(subtotal) {
+                                let tax = subtotal * 0.0625;
+                                return tax;
+                            }
+                
+                            function calculateTotal(subtotal, tax) {
+                                let total = subtotal + tax;
+                                return total;
+                            }
+                
+                            function displayOrderInfoTopLeft() {
+                                document.write(order["hotdogs"] + " hotdog(s)<br/>");
+                                document.write(order["fries"] + " fries<br/>");
+                                document.write(order["sodas"] + " soda(s)<br/>");
+                            }
+                            
+                            function calculateAll() {
+                                subtotal1 = calculateSubtotal(0);
+                                discount = calculateDiscount(subtotal1);
+                                subtotal2 = calculateSubtotal(discount);
+                                tax = calculateTax(subtotal2);
+                                total = calculateTotal(subtotal2, tax);
+                                total = showMoney(total);
+                            }
+                            
+                            getNumbers();
+                            calculateAll();
+                            displayOrderInfoTopLeft();
+                        </script>
+                    </div>
+                    
+                    <div class="right";>
+                        <script>
+                            function displayOrderInfoTopRight(subtotal1, discount, subtotal2, tax, total) {
+                                document.write("$" + showMoney(totals["hotdogs"]) + "<br/>");
+                                document.write("$" + showMoney(totals["fries"]) + "<br/>");
+                                document.write("$" + showMoney(totals["sodas"]) + "<br/>");
+                            }
+    
+                            displayOrderInfoTopRight(subtotal1, discount, subtotal2, tax, total);
+                        </script>
+                    </div>
+                </div>
+
+                <br/>
+                <hr>
+                <br/>
+
+                <div class="text">
+                    <div class="left">
+                        <script>
+                            function displayOrderInfoBottomLeft() {
+                                document.write("subtotal<br/>");
+                                document.write("discount<br/>");
+                                document.write("subtotal after discount<br/>");
+                                document.write("tax<br/>");
+                                document.write("<b>total</b>");
+                            }
+                            
+                            displayOrderInfoBottomLeft();
+                        </script>
+                    </div>
+                    
+                    <div class="right";>
+                        <script>
+                            function displayOrderInfoBottomRight(subtotal1, discount, subtotal2, tax, total) {
+                                document.write("$" + showMoney(subtotal1) + "<br/>");
+                                document.write("-$" + showMoney(discount) + "<br/>");
+                                document.write("$" + showMoney(subtotal2) + "<br/>");
+                                document.write("$" + showMoney(tax) + "<br/>");
+                                document.write("<b>$" + showMoney(total) + "</b>");
+                            }
+    
+                            displayOrderInfoBottomRight(subtotal1, discount, subtotal2, tax, total);
+                        </script>
+                    </div>
+                </div>
+
+                <div>
+                    <button><a href='https://echenjones.github.io/cs0020/Assignment4/Assignment4.html'>ORDER</a></button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
