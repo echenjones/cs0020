@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title>Tic Tac Toe</title>
+        <link rel="icon" type="image/x-icon" href="icon.png">
+        <style type="text/css">
+            .turn, .winner, .button {
+                width: 100px;
+                padding: 5px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                border: 2px solid #3073C9;
+                color: #183862;
+            }
+            .board {
+                display: grid;
+                justify-content: center;
+                grid-template-columns: auto auto auto;
+            }
+            .square {
+                width: 100px;
+                height: 100px;
+                margin: 5px;
+                border: 1px solid #3B8BF5;
+                font-size: 78px;
+                color: #347BD8;
+            }
+            .square:hover, .button:hover {
+                background-color: #C5DAF5;
+            }
+            h1 {
+                font-size: 62px;
+                color: #2D6ABA;
+            }
+            * {
+                text-align: center;
+                font-family: "Avenir", Arial, sans-serif;
+                margin: 0 auto;
+            }
+        </style>
+
+        <script>
+            function choosePlayer() {
+                player = "X";
+                rand = Math.round(Math.random());
+                if (rand == 0) {
+                    player = "O";
+                }
+                document.querySelector(".turn").textContent = "It is " + player + "'s turn";
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Tic Tac Toe</h1>
+        <div class="turn">
+            <script>
+                choosePlayer();
+            </script>
+        </div>
+
+        <div class="board">
+            <script>
+                const NUM_SQUARES = 9;
+                for (i = 0; i < NUM_SQUARES; i++) {
+                    id = "sq" + i;
+                    document.write("<div class='square' id='" + id + "'></div>");
+                    document.getElementById(id).addEventListener("click", function() {
+                        if (this.textContent == "") {
+                            this.textContent = player;
+                            if (player == "X") {
+                                player = "O";
+                            }
+                            else {
+                                player = "X";
+                            }
+                            document.querySelector(".turn").textContent = "It is " + player + "'s turn";
+                            document.querySelector(".button").textContent = "Restart Game";
+                        }
+                        num = this.id.replace("sq", "");
+                        alert(num);
+                    })
+                }
+            </script>
+        </div>
+
+        <div class="winner">
+            <!-- This will all be changed; it's just a stand in for now -->
+            <script>
+                tie = false;
+                if (tie == false) {
+                    document.write(player + " Won!");
+                }
+                else {
+                    document.write("Tie!")
+                }
+            </script>
+        </div>
+
+        <div class="button">
+            <script>
+                document.write("Start Game");
+                document.querySelector(".button").addEventListener("click", function() {
+                    for (i = 0; i < NUM_SQUARES; i++) {
+                        id = "sq" + i;
+                        document.getElementById(id).textContent = "";
+                        choosePlayer();
+                    }
+                })
+            </script>
+        </div>
+    </body>
+</html>
