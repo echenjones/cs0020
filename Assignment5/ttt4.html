@@ -1,0 +1,151 @@
+<html>
+    <head>
+        <title>Tic Tac Toe</title>
+        <link rel="icon" type="image/x-icon" href="icon.png">
+        <style type="text/css">
+            .turn, .winner, .button {
+                width: 100px;
+                padding: 5px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                border: 2px solid #3073C9;
+                color: #183862;
+            }
+            .board {
+                display: grid;
+                justify-content: center;
+                grid-template-columns: auto auto auto;
+            }
+            .square {
+                width: 100px;
+                height: 100px;
+                margin: 5px;
+                border: 1px solid #3B8BF5;
+                font-size: 78px;
+                color: #347BD8;
+            }
+            .winner {
+                visibility: hidden;
+            }
+            .square:hover, .button:hover {
+                background-color: #C5DAF5;
+            }
+            h1 {
+                font-size: 62px;
+                color: #2D6ABA;
+            }
+            * {
+                text-align: center;
+                font-family: "Avenir", Arial, sans-serif;
+                margin: 0 auto;
+            }
+        </style>
+
+        <script>"v"
+            function choosePlayer() {
+                player = "X";
+                rand = Math.round(Math.random());
+                if (rand == 0) {
+                    player = "O";
+                }
+                document.querySelector(".turn").textContent = "It is " + player + "'s turn";
+            }
+
+            function endGame(winner) {
+                document.querySelector(".turn").textContent = "Game Over!";
+                document.querySelector(".winner").style.visibility = "visible";
+                if (tie == false) {
+                    document.querySelector(".winner").textContent = winner + " Won!";
+                }
+                else {
+                    document.querySelector(".winner").textContent = "Tie!";
+                }
+                gameOver = true;
+                player = "";
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Tic Tac Toe</h1>
+        <div class="turn">
+            <script>
+                choosePlayer();
+            </script>
+        </div>
+
+        <div class="board">
+            <script>
+                gameOver = false;
+                moves = ["-", "-", "-", "-", "-", "-", "-", "-", "-"];
+                const NUM_SQUARES = 9;
+                for (i = 0; i < NUM_SQUARES; i++) {
+                    id = "sq" + i;
+                    document.write("<div class='square' id='" + id + "'></div>");
+                    document.getElementById(id).addEventListener("click", function() {
+                        if (this.textContent == "") {
+                            this.textContent = player;
+                            num = this.id.replace("sq", "");
+                            moves[num] = player;
+                            winConditions = [moves[0] + moves[1] + moves[2],
+                                             moves[3] + moves[4] + moves[5],
+                                             moves[6] + moves[7] + moves[8],
+                                             moves[0] + moves[3] + moves[6],
+                                             moves[1] + moves[4] + moves[7],
+                                             moves[2] + moves[5] + moves[8],
+                                             moves[0] + moves[4] + moves[8],
+                                             moves[2] + moves[4] + moves[6]];
+                            tie = true;
+                            winConditions.forEach(function(item) {
+                                if (item == "XXX") {
+                                    endGame("X");
+                                }
+                                else if (item == "OOO") {
+                                    endGame("O");
+                                }
+                                if (item.includes("-") || item.length < 3) {
+                                    tie = false;
+                                }
+                            });
+                            if (tie == true) {
+                                endGame();
+                            }
+
+                            if (player == "X" && !gameOver) {
+                                player = "O";
+                                document.querySelector(".turn").textContent = "It is O's turn";
+                            }
+                            else if (player == "O" && !gameOver) {
+                                player = "X";
+                                document.querySelector(".turn").textContent = "It is X's turn";
+                            }
+                            document.querySelector(".button").textContent = "Restart Game";
+                        }
+                    });
+                }
+            </script>
+        </div>
+
+        <div class="winner">
+            <script>
+                document.write("???");
+            </script>
+        </div>
+
+        <div class="button">
+            <script>
+                document.write("Start Game");
+                document.querySelector(".button").addEventListener("click", function() {
+                    for (i = 0; i < NUM_SQUARES; i++) {
+                        id = "sq" + i;
+                        document.getElementById(id).textContent = "";
+                        choosePlayer();
+                    }
+                    document.querySelector(".winner").style.visibility = "hidden";
+                    moves = ["-", "-", "-", "-", "-", "-", "-", "-", "-"];
+                    gameOver = false;
+                });
+            </script>
+        </div>
+    </body>
+</html>
