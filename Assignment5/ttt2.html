@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Tic Tac Toe</title>
+        <link rel="icon" type="image/x-icon" href="icon.png">
+        <style type="text/css">
+            .player, .winner {
+                width: 100px;
+                padding: 5px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                border: 2px solid #3073C9;
+                color: #183862;
+            }
+            .board {
+                display: grid;
+                justify-content: center;
+                grid-template-columns: auto auto auto;
+            }
+            .square {
+                width: 100px;
+                height: 100px;
+                margin: 5px;
+                border: 1px solid #3B8BF5;
+                font-size: 78px;
+                color: #347BD8;
+            }
+            .square:hover {
+                background-color: #C5DAF5;
+            }
+            h1 {
+                font-size: 62px;
+                color: #2D6ABA;
+            }
+            * {
+                text-align: center;
+                font-family: "Avenir", Arial, sans-serif;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Tic Tac Toe</h1>
+        <div class="player">
+            <script>
+                player = "X";
+                rand = Math.round(Math.random());
+                if (rand == 0) {
+                    player = "O";
+                }
+                document.write("It is " + player + "'s turn");
+            </script>
+        </div>
+
+        <div class="board">
+            <script>
+                const NUM_SQUARES = 9;
+                for (i = 0; i < NUM_SQUARES; i++) {
+                    id = "sq" + i;
+                    document.write("<div class='square' id='" + id + "'></div>");
+                }
+                document.getElementById("sq2").textContent = "X";
+                document.getElementById("sq3").textContent = "O";
+            </script>
+        </div>
+
+        <div class="winner">
+            <!-- This will all be changed; it's just a stand in for now -->
+            <script>
+                tie = false;
+                if (tie == false) {
+                    document.write(player + " Won!");
+                }
+                else {
+                    document.write("Tie!")
+                }
+            </script>
+        </div>
+    </body>
+</html>
