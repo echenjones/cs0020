@@ -41,7 +41,7 @@
                 <option value="">--select category--</option>
                 <script>
                     let arr = [];
-                    $.get("https://elanac.sgedu.site/Assignment7/products.json", function(data) {
+                    $.get("https://echenjones.github.io/cs0020/Assignment7/products.json", function(data) {
                         // Add each product to array, if not already included
                         $.each(data, function(index, product) {
                             $.each(product.categories, function(index, category) {
@@ -78,7 +78,7 @@
 
                 // Display products that are included in selected category
                 $("#products-list").show();
-                $.get("https://elanac.sgedu.site/Assignment7/products.json", function(data) {
+                $.get("https://echenjones.github.io/cs0020/Assignment7/products.json", function(data) {
                     let str = "";
                     $.each(data, function(index, product) {
                         if (product.categories.includes(value)) {
