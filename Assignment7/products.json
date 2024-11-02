@@ -1,0 +1,188 @@
+[
+    {
+        "name": "TTPD Gray Embossed Hoodie",
+        "description": "Gray hoodie with front pocked featuring embossed \"TTPD\" album logo",
+        "price": 75.00,
+        "categories": ["clothing", "ttpd"]
+    },
+    {
+        "name": "The Tortured Poets Department Fountain Pen",
+        "description": "Black ink writing pen featuring \"TTPD\" album logo and \"Taylor Swift\"",
+        "price": 15.00,
+        "categories": ["stationery", "ttpd"]
+    },
+    {
+        "name": "Taylor Swift Midnights Cardigan",
+        "description": "Navy knit cardigan featuring star patches and \"Taylor Swift Midnights\" patch",
+        "price": 70.00,
+        "categories": ["clothing", "midnights"]
+    },
+    {
+        "name": "Taylor Swift Midnights Album Cover T-Shirt",
+        "description": "Beige t-shirt featuring Taylor Swift Midnights album cover photo",
+        "price": 40.00,
+        "categories": ["clothing", "midnights"]
+    },
+    {
+        "name": "evermore Gold Rush Longsleeve T-Shirt",
+        "description": "Brown longsleeve t-shirt featuring photo of Taylor Swift and the words \"Gold Rush\" and \"Taylor Swift\"",
+        "price": 50.00,
+        "categories": ["clothing", "evermore"]
+    },
+    {
+        "name": "the \"betty's garden\" T-Shirt",
+        "description": "Natural beige t-shirt featuring photograph of Taylor Swift",
+        "price": 35.00,
+        "categories": ["clothing", "folklore"]
+    },
+    {
+        "name": "the \"in the trees\" Phone Case",
+        "description": "Phone case featuring album cover artwork and album name",
+        "price": 25.00,
+        "categories": ["accessories", "folklore"]
+    },
+    {
+        "name": "It's a Cruel Summer with You Crewneck",
+        "description": "Black crewneck featuring photo of Taylor Swift and the words \"No Rules in Breakable Heaven\" and \"It's a Cruel Summer with You\"",
+        "price": 65.00,
+        "categories": ["clothing", "lover"]
+    },
+    {
+        "name": "Lover Album Valentine's Day Cards and Stickers",
+        "description": "Set of 4 customizable greeting cards with Lover album cloud print and vinyl sticker set",
+        "price": 25.00,
+        "categories": ["stationery", "lover"]
+    },
+    {
+        "name": "They Say I Did Something Bad, But Why's It Feel So Good Destructed Tee",
+        "description": "Black distressed t-shirt featuring photo of Taylor Swift with snake and star design",
+        "price": 45.00,
+        "categories": ["clothing", "reputation"]
+    },
+    {
+        "name": "Jack Leopards Hip Bag",
+        "description": "Brown zipper hip back featuring \"Jack Leopards & The Dolphin Club\" embroidered",
+        "price": 35.00,
+        "categories": ["accessories", "reputation"]
+    },
+    {
+        "name": "1989 Crewneck",
+        "description": "Blue crewneck pullover with white \"1989\" and \"T.S.\"",
+        "price": 60.00,
+        "categories": ["clothing", "1989"]
+    },
+    {
+        "name": "Screaming, Crying, Perfect Storms Baby T-Shirt",
+        "description": "Yellow baby t-shirt featuring the words \"screaming, crying, perfect storms\" and \"1989 Taylor's Version\"",
+        "price": 34.89,
+        "categories": ["clothing", "1989"]
+    },
+    {
+        "name": "Red (Taylor's Version) State of Grace Hoodie",
+        "description": "White hoodie featuring the words \"And I Never Saw You Coming And I'll Never Be The Same\" with photos of Taylor Swift",
+        "price": 75.00,
+        "categories": ["clothing", "red"]
+    },
+    {
+        "name": "Speak Now (Taylor's Version) Eras Tote Bag",
+        "description": "Purple tote bag with \"Speak Now Taylor's Version\" embroidered in metallic gold",
+        "price": 40.00,
+        "categories": ["accessories", "speak now"]
+    },
+    {
+        "name": "Speak Now (Taylor's Version) Journal and Pencil Set",
+        "description": "Purple journal with 100 lined pages featuring illustration of Taylor Swift and tree design, black pencil holder, and 2 pencils",
+        "price": 35.00,
+        "categories": ["stationery", "speak now"]
+    },
+    {
+        "name": "With You I'd Dance Boxy Pullover",
+        "description": "Black boxy pullover crewneck with gold Taylor Swift photo and words \"Fearless Taylor's Version\"",
+        "price": 60.00,
+        "categories": ["clothing", "fearless"]
+    },
+    {
+        "name": "I Wear T-Shirts T-Shirt",
+        "description": "Black t-shirt featuring photo of Taylor Swift performing live and words \"Taylor Swift\"",
+        "price": 35.00,
+        "categories": ["clothing", "fearless"]
+    },
+    {
+        "name": "On a Wishing Star Crewneck",
+        "description": "White crewneck with light blue ribbing featuring the words \"the only thing that keeps me wishing on a Wishing Star, taylor swift\"",
+        "price": 65.00,
+        "categories": ["clothing", "self-titled"]
+    },
+    {
+        "name": "Self-Titled Guitar Pick Set",
+        "description": "A set of three light blue guitar picks featuring the words \"Fake a Smile\", \"All I Think About at Night\", and \"He's the Song in the Car\"",
+        "price": 35.00,
+        "categories": ["music", "self-titled"]
+    },
+    {
+        "name": "Taylor Swift | The Eras Tour Mineral Wash Gray T-Shirt",
+        "description": "Mineral wash gray t-shirt featuring photos of Taylor Swift with words \"Taylor Swift | The Eras Tour 2023\" and tour locations",
+        "price": 45.00,
+        "categories": ["clothing", "eras tour"]
+    },
+    {
+        "name": "Taylor Swift | The Eras Tour II Washed Blue Hoodie",
+        "description": "Washed blue hoodie with front pocket featuring words \"Taylor Swift The Eras Tour\" and tour locations",
+        "price": 70.00,
+        "categories": ["clothing", "eras tour"]
+    },
+    {
+        "name": "The Tortured Poets Department Vinyl + Bonus Track \"The Manuscript\"",
+        "description": "2 Ghosted White vinyl discs including 16 tracks + bonus track \"The Manuscript\"",
+        "price": 34.99,
+        "categories": ["music", "vinyl", "ttpd"]
+    },
+    {
+        "name": "Midnights: The Moonstone Blue Edition Vinyl",
+        "description": "Moonstone blue marbled color disc includes 13 songs",
+        "price": 29.99,
+        "categories": ["music", "vinyl", "midnights"]
+    },
+    {
+        "name": "evermore album deluxe edition vinyl",
+        "description": "Each deluxe edition vinyl includes 15 songs + 2 bonus tracks \"right where you left me\" and \"it's time to go\"",
+        "price": 26.00,
+        "categories": ["music", "vinyl", "evermore"]
+    },
+    {
+        "name": "1. the \"in the trees\" Edition Deluxe Vinyl",
+        "description": "Each deluxe edition vinyl includes 16 songs + bonus song \"the lakes\"",
+        "price": 26.00,
+        "categories": ["music", "vinyl", "folklore"]
+    },
+    {
+        "name": "Lover Vinyl",
+        "description": "2 colored vinyl discs including 19 songs",
+        "price": 25.00,
+        "categories": ["music", "vinyl", "lover"]
+    },
+    {
+        "name": "1989 (Taylor's Version) Vinyl",
+        "description": "2 Crystal Skies Blue vinyl discs including 21 songs including 5 previously unreleased songs from the Vault",
+        "price": 31.89,
+        "categories": ["music", "vinyl", "1989"]
+    },
+    {
+        "name": "Red (Taylor's Version) Red Vinyl",
+        "description": "Each vinyl album features 30 songs including 9 songs from the Vault",
+        "price": 26.00,
+        "categories": ["music", "vinyl", "red"]
+    },
+    {
+        "name": "Speak Now (Taylor's Version) 3LP Orchid Marbled Vinyl",
+        "description": "Each vinyl album features 22 songs including 6 previously unreleased songs from the Vault",
+        "price": 38.99,
+        "categories": ["music", "vinyl", "speak now"]
+    },
+    {
+        "name": "Fearless (Taylor's Version) Vinyl",
+        "description": "Each vinyl album features 27 songs including 6 unreleased songs from the Vault",
+        "price": 39.00,
+        "categories": ["music", "vinyl", "fearless"]
+    }
+]
