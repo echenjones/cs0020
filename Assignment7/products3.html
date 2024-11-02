@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Products</title>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"   
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   
+            crossorigin="anonymous"></script>
+
+        <style type="text/css">
+            .product {
+                margin: 20px 20px;
+                color: #434961;
+                font-size: 20px;
+                text-align: center;
+            }
+            #filter {
+                display: block;
+                margin: 100px auto 10px auto;
+                text-align: center;
+            }
+            #products-list {
+                display: none;
+                width: 50%;
+                margin: 20px auto;
+                border: 1px solid #C8AE95;
+            }
+            * {
+                margin: 0 auto;
+                font-family: "Avenir", Arial, sans-serif;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Form to filter categories -->
+        <form id="filter" name="filter">
+            <label>Categories:</label>
+            <select id="category" name="category" required>
+                <option value="">--select category--</option>
+                <script>
+                    let arr = [];
+                    $.get("https://elanac.sgedu.site/Assignment7/products.json", function(data) {
+                        // Add each product to array, if not already included
+                        $.each(data, function(index, product) {
+                            $.each(product.categories, function(index, category) {
+                                if (!arr.includes(category)) {
+                                    arr.push(category);
+                                }
+                            });
+                        });
+
+                        // Sort array alphabetically
+                        arr.sort();
+
+                        // Add each category to drop-down menu using jQuery
+                        arr.forEach(function(category) {
+                            $("#category").append($("<option></option>").val(category).text(category));
+                        });
+                    });
+                </script>
+            </select>
+            <input type="submit" value="Filter">
+        </form>
+
+        <!-- List of products - initially hidden -->
+        <div id="products-list">&nbsp;</div>
+
+        <script>
+            let filter = $("#filter");
+            filter.on("submit", function(event) {
+                event.preventDefault();
+
+                // Get value of category
+                let category = $("#category");
+                let value = category.val();
+
+                // Display products that are included in selected category
+                $("#products-list").show();
+                $.get("https://elanac.sgedu.site/Assignment7/products.json", function(data) {
+                    let str = "";
+                    $.each(data, function(index, product) {
+                        if (product.categories.includes(value)) {
+                            str += "<div class='product'><h2>" + product.name + "</h2></div>";
+                        }
+                    });
+                    $("#products-list").html(str);
+                });
+            });
+        </script>
+    </body>
+</html>
