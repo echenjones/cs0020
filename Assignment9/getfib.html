@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Assignment 9</title>
+    </head>
+
+    <body>
+        <div id="sequence"></div>
+        <script>
+            res = fetch("https://elanac.sgedu.site/Assignment9/fibapi.php?num=10")
+            .then (res => res.json())
+            .then (data => {
+                strFib = JSON.stringify(data.data);
+                document.getElementById("sequence").textContent += strFib;
+            })
+            .catch (error => console.log(error))
+        </script>
+    </body>
+</html>
